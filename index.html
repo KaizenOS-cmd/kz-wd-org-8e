@@ -1,1 +1,465 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Placeholder</title></head><body><p>Coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workday Org Structures & Supervisory Orgs SOP — Kaizen OS</title>
+<style>
+  :root {
+    --bg:#0e0e0e;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;
+    --accent:#c8f04a;--accent-dim:#a8cc30;--text:#e8e8e8;--text-muted:#888;--text-dim:#555;
+    --tip:#1a2e1a;--tip-b:#4caf50;--tip-t:#a5d6a7;
+    --warn:#2e1a0e;--warn-b:#ff9800;--warn-t:#ffcc80;
+    --note:#1a1e2e;--note-b:#5c7cfa;--note-t:#a5b4fc;
+    --rat:#2a1e2e;--rat-b:#a855f7;--rat-t:#d8b4fe;
+    --crit:#2e0e0e;--crit-b:#ef4444;--crit-t:#fca5a5;
+    --font:'Segoe UI',system-ui,sans-serif;--mono:'Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.7}
+  .page{max-width:900px;margin:0 auto;padding:48px 32px}
+  .cover{border-bottom:1px solid var(--border);padding-bottom:48px;margin-bottom:48px}
+  .tags{display:flex;align-items:center;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+  .series-tag{display:inline-flex;align-items:center;background:rgba(200,240,74,.06);border:1px solid rgba(200,240,74,.2);border-radius:4px;padding:5px 12px}
+  .series-label{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent-dim);text-transform:uppercase}
+  .brand-tag{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:6px 14px}
+  .brand-dot{width:8px;height:8px;background:var(--accent);border-radius:50%}
+  .brand-name{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+  .cover-title{font-size:36px;font-weight:800;line-height:1.2;color:#fff;margin-bottom:12px}
+  .cover-title span{color:var(--accent)}
+  .cover-sub{font-size:16px;color:var(--text-muted);margin-bottom:32px;max-width:620px}
+  .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+  .meta-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px}
+  .meta-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
+  .meta-value{font-size:14px;color:var(--text);font-weight:600}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:48px}
+  .toc-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
+  .toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .toc-list li{display:flex;align-items:center;gap:12px}
+  .toc-num{font-size:11px;font-weight:700;color:var(--accent);font-family:var(--mono);min-width:24px}
+  .toc-list a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color .2s}
+  .toc-list a:hover{color:var(--accent)}
+  .section{margin-bottom:56px;scroll-margin-top:24px}
+  .section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .section-num{font-size:11px;font-weight:800;font-family:var(--mono);color:var(--accent);background:rgba(200,240,74,.08);border:1px solid rgba(200,240,74,.2);border-radius:4px;padding:4px 8px;margin-top:4px;white-space:nowrap}
+  .section-title{font-size:22px;font-weight:700;color:#fff}
+  .section-desc{font-size:14px;color:var(--text-muted);margin-top:4px}
+  .callout{border-left:3px solid;border-radius:0 6px 6px 0;padding:14px 18px;margin:20px 0}
+  .callout-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+  .callout-body{font-size:14px;line-height:1.6}
+  .callout.tip{background:var(--tip);border-color:var(--tip-b)}.callout.tip .callout-label{color:var(--tip-b)}.callout.tip .callout-body{color:var(--tip-t)}
+  .callout.warn{background:var(--warn);border-color:var(--warn-b)}.callout.warn .callout-label{color:var(--warn-b)}.callout.warn .callout-body{color:var(--warn-t)}
+  .callout.note{background:var(--note);border-color:var(--note-b)}.callout.note .callout-label{color:var(--note-b)}.callout.note .callout-body{color:var(--note-t)}
+  .callout.rat{background:var(--rat);border-color:var(--rat-b)}.callout.rat .callout-label{color:var(--rat-b)}.callout.rat .callout-body{color:var(--rat-t)}
+  .callout.crit{background:var(--crit);border-color:var(--crit-b)}.callout.crit .callout-label{color:var(--crit-b)}.callout.crit .callout-body{color:var(--crit-t)}
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:flex;gap:20px;position:relative}
+  .step:not(:last-child)::after{content:'';position:absolute;left:18px;top:44px;bottom:0;width:1px;background:var(--border)}
+  .step-num{width:36px;height:36px;border-radius:50%;background:var(--surface2);border:2px solid var(--accent);color:var(--accent);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;font-family:var(--mono);position:relative;z-index:1}
+  .step-content{flex:1;padding-bottom:28px}
+  .step-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+  .step-body{font-size:14px;color:var(--text-muted);line-height:1.7}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text)}
+  .check-box{width:18px;height:18px;border:2px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:2px;cursor:pointer;transition:all .2s}
+  .check-box.checked{background:var(--accent);border-color:var(--accent)}
+  .check-label{flex:1}
+  .check-label small{display:block;color:var(--text-dim);font-size:12px;margin-top:2px}
+  .data-table{width:100%;border-collapse:collapse;font-size:14px}
+  .data-table th{background:var(--surface2);color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+  .data-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table tr:hover td{background:rgba(255,255,255,.02)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px}
+  .badge.high{background:rgba(255,99,99,.15);color:#ff9999}
+  .badge.med{background:rgba(255,165,0,.15);color:#ffcc80}
+  .badge.low{background:rgba(76,175,80,.15);color:#a5d6a7}
+  .badge.crit{background:rgba(239,68,68,.2);color:#fca5a5}
+  .badge.info{background:rgba(92,124,250,.15);color:#a5b4fc}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px}
+  .card-title{font-size:13px;font-weight:700;color:var(--accent-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+  .subsection{margin:28px 0}
+  .subsection-title{font-size:14px;font-weight:700;color:var(--accent-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+  .divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+  /* Org tree visual */
+  .org-tree{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;margin:20px 0;font-family:var(--mono);font-size:13px}
+  .org-node{color:var(--text);padding:2px 0}
+  .org-node.root{color:var(--accent);font-weight:700}
+  .org-node.l1{padding-left:24px;color:var(--text-muted)}
+  .org-node.l2{padding-left:48px;color:var(--text-dim)}
+  .org-node.l3{padding-left:72px;color:var(--text-dim);font-size:12px}
+  .notes-area{background:var(--surface);border:1px dashed var(--border);border-radius:8px;padding:24px}
+  .nf-label{font-size:11px;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+  .nfield{background:transparent;border:none;border-bottom:1px solid var(--border);width:100%;color:var(--text);font-family:var(--font);font-size:14px;padding:8px 0;margin-bottom:16px;outline:none}
+  .nfield::placeholder{color:var(--text-dim)}
+  .nfield:focus{border-color:var(--accent)}
+  .ntarea{background:var(--surface2);border:1px solid var(--border);border-radius:6px;width:100%;color:var(--text);font-family:var(--font);font-size:14px;padding:12px 16px;outline:none;resize:vertical;min-height:120px}
+  .ntarea:focus{border-color:var(--accent)}
+  .nrow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  /* Series summary table */
+  .series-grid{display:grid;grid-template-columns:auto 1fr auto;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+  .sg-row{display:contents}
+  .sg-cell{padding:12px 16px;border-bottom:1px solid var(--border);font-size:14px}
+  .sg-cell.num{color:var(--accent);font-family:var(--mono);font-weight:700;background:var(--surface2)}
+  .sg-cell.title{color:var(--text)}
+  .sg-cell.status{text-align:right}
+  .sg-cell:nth-child(3n+1){background:var(--surface2)}
+  .footer{border-top:1px solid var(--border);padding-top:32px;margin-top:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:2px}
+  .footer-note{font-size:12px;color:var(--text-dim)}
+  p{margin-bottom:12px;color:var(--text-muted);font-size:14px}
+  ul,ol{padding-left:20px;color:var(--text-muted);font-size:14px;line-height:1.8}
+  strong{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <div class="tags">
+      <div class="series-tag"><span class="series-label">Workday SOP Series · Vol. 06 — Final Volume</span></div>
+      <div class="brand-tag"><div class="brand-dot"></div><span class="brand-name">Kaizen OS</span></div>
+    </div>
+    <div class="cover-title">Org Structures &amp;<br><span>Supervisory Orgs</span></div>
+    <p class="cover-sub">A practitioner SOP for designing, building, and maintaining Workday organisational structures — covering supervisory org hierarchy design, org creation and editing, role assignments, org type configuration, and M&A / restructure playbooks. The foundation that every other Workday module sits on.</p>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Document Type</div><div class="meta-value">SOP Template</div></div>
+      <div class="meta-item"><div class="meta-label">Series Volume</div><div class="meta-value">06 of 06</div></div>
+      <div class="meta-item"><div class="meta-label">Audience</div><div class="meta-value">Workday Admins / Consultants</div></div>
+      <div class="meta-item"><div class="meta-label">Scope</div><div class="meta-value">Org Architecture</div></div>
+      <div class="meta-item"><div class="meta-label">Version</div><div class="meta-value">1.0</div></div>
+      <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Active</div></div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><span class="toc-num">01</span><a href="#s1">How to Use This SOP</a></li>
+      <li><span class="toc-num">02</span><a href="#s2">Org Architecture Primer</a></li>
+      <li><span class="toc-num">03</span><a href="#s3">Pre-Configuration Checklist</a></li>
+      <li><span class="toc-num">04</span><a href="#s4">Supervisory Org Creation &amp; Configuration</a></li>
+      <li><span class="toc-num">05</span><a href="#s5">Role Assignments on Orgs</a></li>
+      <li><span class="toc-num">06</span><a href="#s6">Additional Org Types</a></li>
+      <li><span class="toc-num">07</span><a href="#s7">Restructures, Moves &amp; M&amp;A Scenarios</a></li>
+      <li><span class="toc-num">08</span><a href="#s8">Org Governance &amp; Audit</a></li>
+      <li><span class="toc-num">09</span><a href="#s9">Validation &amp; Testing</a></li>
+      <li><span class="toc-num">10</span><a href="#s10">Operator Notes</a></li>
+      <li><span class="toc-num">11</span><a href="#s11">Change Log</a></li>
+      <li><span class="toc-num">12</span><a href="#s12">Series Summary</a></li>
+    </ul>
+  </div>
+
+  <!-- S1 -->
+  <div class="section" id="s1">
+    <div class="section-header"><div class="section-num">01</div><div><div class="section-title">How to Use This SOP</div><div class="section-desc">Read before touching any org structure</div></div></div>
+    <p>The supervisory org hierarchy is the structural backbone of Workday. Every security constraint, every business process routing, every report filter, and every role assignment is anchored to this hierarchy. A poorly designed or incorrectly maintained org structure cascades into failures across security, payroll, reporting, and user experience simultaneously.</p>
+    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Moving orgs, reassigning managers, or restructuring the hierarchy affects: (1) role-based security group membership — immediately, (2) business process routing — immediately, (3) reporting rollups — immediately, (4) compensation hierarchy for review cycles. Always model the impact across all four dimensions before executing any org change in production.</div></div>
+    <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Maintain a visual org chart (Visio, Miro, or org chart export from Workday) alongside this SOP. The visual is the first reference point during restructure planning — having it current and accessible reduces planning errors significantly.</div></div>
+  </div>
+
+  <!-- S2 -->
+  <div class="section" id="s2">
+    <div class="section-header"><div class="section-num">02</div><div><div class="section-title">Org Architecture Primer</div><div class="section-desc">Org types, hierarchy rules, and design principles</div></div></div>
+
+    <div class="grid2">
+      <div class="card"><div class="card-title">Supervisory Org</div><p style="font-size:13px;color:var(--text-muted);margin:0">The primary org type. Reflects the management hierarchy — workers belong to supervisory orgs. Security constraints, manager relationships, and BP routing all derive from this structure.</p></div>
+      <div class="card"><div class="card-title">Company / Legal Entity</div><p style="font-size:13px;color:var(--text-muted);margin:0">A legal-entity org type used for payroll, legal reporting, and financial consolidation. Workers have a primary company assignment. Does not drive security or BP routing.</p></div>
+      <div class="card"><div class="card-title">Cost Center</div><p style="font-size:13px;color:var(--text-muted);margin:0">Financial org type. Workers (or positions) are assigned a cost center for financial reporting and budget allocation. Cost center hierarchy is separate from supervisory org hierarchy.</p></div>
+      <div class="card"><div class="card-title">Region</div><p style="font-size:13px;color:var(--text-muted);margin:0">Geographic org type. Used for grouping workers by geography for reporting, headcount analysis, and regional HR operations. Drives constrained security for regional HR Leads.</p></div>
+      <div class="card"><div class="card-title">Custom Org Types</div><p style="font-size:13px;color:var(--text-muted);margin:0">Business-defined org types (Business Unit, Division, Function, Practice). Used for reporting segmentation and cross-matrix structures. Workers can belong to multiple custom org types simultaneously.</p></div>
+      <div class="card"><div class="card-title">Matrix Orgs</div><p style="font-size:13px;color:var(--text-muted);margin:0">Workday supports matrix management via additional org assignments (e.g., a worker in a Supervisory Org under their direct manager, and a Project Org under a dotted-line lead). Matrix orgs do not drive primary security.</p></div>
+    </div>
+
+    <div class="subsection"><div class="subsection-title">Example Supervisory Org Hierarchy</div></div>
+    <div class="org-tree">
+      <div class="org-node root">▸ [Company Name] — Top-Level Org</div>
+      <div class="org-node l1">├─ CHRO Office</div>
+      <div class="org-node l2">├─ HR Shared Services</div>
+      <div class="org-node l3">├─ HRIS &amp; Data Management</div>
+      <div class="org-node l3">└─ HR Operations</div>
+      <div class="org-node l2">└─ Talent Acquisition</div>
+      <div class="org-node l1">├─ Technology</div>
+      <div class="org-node l2">├─ Engineering — Platform</div>
+      <div class="org-node l2">└─ Engineering — Product</div>
+      <div class="org-node l1">├─ Commercial</div>
+      <div class="org-node l2">├─ Sales — North America</div>
+      <div class="org-node l2">└─ Sales — EMEA</div>
+      <div class="org-node l1">└─ Finance</div>
+      <div class="org-node l2">└─ Financial Planning &amp; Analysis</div>
+    </div>
+
+    <div class="callout rat"><div class="callout-label">💡 Rationale</div><div class="callout-body">The supervisory org hierarchy should reflect the <strong>management reporting line</strong> — not the business or functional structure. Finance, Division, and Business Unit structures should use separate Cost Center or Custom Org hierarchies. Conflating management and financial structure in the supervisory org is the most common org design error in Workday implementations.</div></div>
+
+    <div class="subsection"><div class="subsection-title">Org Design Principles</div></div>
+    <table class="data-table">
+      <thead><tr><th>Principle</th><th>Guidance</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><strong>One worker, one supervisory org</strong></td><td>Every worker belongs to exactly one supervisory org. No exceptions.</td><td>Multiple supervisory org assignments break manager chain-of-command in Workday</td></tr>
+        <tr><td><strong>Manager = Org head</strong></td><td>The manager of a supervisory org is the worker at the top of that org — typically the person who manages the team directly.</td><td>Manager assignment drives approval routing, comp review, and self-service access</td></tr>
+        <tr><td><strong>Minimum viable hierarchy depth</strong></td><td>Design the shallowest hierarchy that supports your reporting and security needs. Avoid creating orgs for teams of 1 where possible.</td><td>Deep hierarchies increase maintenance burden and can create unintended approval chain lengths</td></tr>
+        <tr><td><strong>Top org is sacred</strong></td><td>Never move or rename the top-level org without extensive planning. It anchors every reporting rollup and security inheritance.</td><td>Top-org changes break integrations, reports, and security simultaneously</td></tr>
+        <tr><td><strong>Org name = functional intent</strong></td><td>Name orgs for their function/team, not their current manager. Manager names in org names create constant rename maintenance.</td><td>Org names appear in reports, BP notifications, and system communications at scale</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- S3 -->
+  <div class="section" id="s3">
+    <div class="section-header"><div class="section-num">03</div><div><div class="section-title">Pre-Configuration Checklist</div><div class="section-desc">Complete before any org creation or restructure</div></div></div>
+    <ul class="checklist">
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Org design document approved — new orgs, parent org, and manager assignments confirmed<small>[ORG-SPECIFIC] Include org name, manager name/ID, parent org, effective date</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Downstream impact assessed across security, BPF, integrations, and reporting<small>Use the Vol. 02, 03, 01, and 05 SOPs to evaluate impact in each domain before proceeding</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">HR Partner and Manager role assignments confirmed for the new or restructured org</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Cost Center and other org type assignments confirmed with Finance</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Legal entity assignment confirmed — especially critical for cross-border moves</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Works Council / co-determination notification completed if restructure affects employee works council scope<small>[ORG-SPECIFIC] Required in many EU jurisdictions before executing restructures affecting represented workers</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Communication plan confirmed — impacted workers and managers notified of org changes per HR policy</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Effective date confirmed — aligns with payroll cutoff, comp review cycles, and legal requirements</span></li>
+    </ul>
+  </div>
+
+  <!-- S4 -->
+  <div class="section" id="s4">
+    <div class="section-header"><div class="section-num">04</div><div><div class="section-title">Supervisory Org Creation &amp; Configuration</div><div class="section-desc">Building new orgs and configuring their properties</div></div></div>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Create the Supervisory Organisation</div>
+        <div class="step-body">Search <strong>Create Supervisory Organization</strong>. Enter the org name per your naming convention. Set the <strong>Availability Date</strong> — the earliest date the org can have workers assigned. Set the <strong>Staffing Model</strong>: Position Management (positions exist independently of workers) or Job Management (positions created with workers). Confirm with your HRIS lead which model your tenant uses — do not mix models.</div>
+        <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Staffing Model selection at org creation is <strong>permanent</strong> — it cannot be changed after workers or positions are assigned to the org. Defaulting to the wrong model requires a full org deletion and rebuild. Confirm the tenant's staffing model before creating any org.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Assign the Manager</div>
+        <div class="step-body">Within the org setup, assign the <strong>Manager</strong> — the worker who leads this team. The manager assignment drives: (1) self-service access to team members, (2) approval routing in BPs, (3) Manager security group membership, (4) compensation review org grouping. Confirm the manager's worker record exists and is active before assigning.</div>
+        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">If the new manager is being hired simultaneously with the org creation (common in M&A), create the manager's worker record first — even as a placeholder — before creating the org. Org creation requires an existing Workday worker as manager. You cannot assign a manager who does not yet exist in the system.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Set the Parent Org</div>
+        <div class="step-body">Assign the <strong>Superior Organization</strong> — the org one level up in the hierarchy. This determines the inheritance chain for security, BP routing, and reporting rollups. Navigate the org tree to select the correct parent. Confirm the parent org exists and is correctly positioned in the hierarchy before saving.</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Setting the wrong parent org is one of the most impactful single-field errors in Workday. It immediately misroutes security access, approvals, and reporting. Double-check the parent org by viewing the org hierarchy before and after setting the parent.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">4</div><div class="step-content">
+        <div class="step-title">Configure Org Assignments (Cost Center, Region, Custom Orgs)</div>
+        <div class="step-body">After creating the supervisory org, navigate to <strong>Edit Organization Assignments</strong>. Assign: Cost Center, Company / Legal Entity, Region, and any Custom Org types (Business Unit, Division, Function). These assignments populate automatically on worker records when they are placed in this org — simplifying data entry and ensuring consistency.</div>
+        <div class="callout note"><div class="callout-label">📋 Note</div><div class="callout-body">Cost Center and Company assignment on the supervisory org sets the default for workers in that org. Individual workers can be assigned a different Cost Center at the position level if needed. Confirm with Finance whether Cost Center assignment should be at the org or position level for your tenant's financial reporting model.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">5</div><div class="step-content">
+        <div class="step-title">Assign Locations</div>
+        <div class="step-body">Navigate to the org → <strong>Locations</strong>. Add the physical location(s) where this org's workers are based. Location assignment at the org level sets the default for new positions. For orgs spanning multiple locations (common in global teams), add all relevant locations and confirm with HR Partners that workers are being assigned the correct individual location during Hire transactions.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="section" id="s5">
+    <div class="section-header"><div class="section-num">05</div><div><div class="section-title">Role Assignments on Orgs</div><div class="section-desc">Assigning HR Partners, Recruiters, and other roles to supervisory orgs</div></div></div>
+    <p>Role assignments connect workers to role-based security groups (see Vol. 02) by assigning them a named role on a supervisory org. A worker assigned the HR Partner role on an org gains the security access and BP permissions of the HR Partner security group — constrained to workers within that org hierarchy.</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Assign a Role to the Org</div>
+        <div class="step-body">Navigate to the supervisory org → <strong>Assign Roles</strong>. Select the role (e.g., HR Partner, Recruiter, Benefits Partner). Search for the worker to assign. Set the <strong>scope</strong> — does this role assignment cover just this org, or this org and all subordinate orgs? For HR Partners, typically select "include subordinate organisations" to cover the full reporting hierarchy.</div>
+        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Assign HR Partner roles at the highest org level the HR Partner supports — the subordinate org inclusion means they automatically get access to all child orgs without individual assignments. Avoid assigning the same HR Partner to 50 individual orgs when one top-level assignment with subordinate inclusion achieves the same result with far less maintenance.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Validate Role Assignment Takes Effect</div>
+        <div class="step-body">After assigning the role, confirm the assignment is active: navigate to the assigned worker's profile → <strong>Security Roles</strong> tab. Confirm the role appears with the correct org scope. Then use <strong>View As</strong> (Vol. 02, Section 06) to validate the worker now has the expected security access for workers within that org hierarchy.</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Role assignments on orgs are immediate — the worker gains security access as soon as the assignment is saved. If you are pre-configuring for a future restructure, time role assignments carefully. A worker should not gain access to an org's workers before the restructure is communicated and effective.</div></div>
+      </div></div>
+
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Remove Role Assignments When No Longer Needed</div>
+        <div class="step-body">When an HR Partner leaves, transfers, or the org restructures, remove role assignments immediately. Navigate to the org → <strong>Assign Roles</strong> → remove the worker from the role. This immediately revokes the security access associated with the role — no additional security steps required.</div>
+        <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Stale role assignments — HR Partners or Recruiters who have left or transferred but still hold roles on orgs — are a top-5 Workday security audit finding. Include role assignment review in your offboarding checklist (Hire to Retire BP To-Do) for all workers in HR and Talent Acquisition roles.</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- S6 -->
+  <div class="section" id="s6">
+    <div class="section-header"><div class="section-num">06</div><div><div class="section-title">Additional Org Types</div><div class="section-desc">Cost Centers, Regions, Company, and Custom Org configuration</div></div></div>
+
+    <div class="subsection"><div class="subsection-title">Cost Center Configuration</div></div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Create Cost Center</div>
+        <div class="step-body">Search <strong>Create Cost Center</strong>. Enter the cost center ID (must match your Finance system's GL code exactly — any mismatch breaks financial reporting integrations). Enter the name and assign the Cost Center Hierarchy parent. Assign a Cost Center Manager — typically the budget owner for that cost center.</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Cost Center IDs feed financial system integrations. A typo in the Cost Center ID on creation can result in payroll charges being attributed to the wrong GL code in your ERP. Validate the ID against your Finance system's chart of accounts before saving.</div></div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Assign Cost Center to Supervisory Org</div>
+        <div class="step-body">Navigate to the supervisory org → <strong>Edit Organization Assignments</strong> → Cost Center field. Select the new cost center. This populates as the default for all workers placed in this org going forward. Existing workers retain their current cost center until individually updated or mass updated via EIB (see Vol. 01).</div>
+      </div></div>
+    </div>
+
+    <div class="subsection"><div class="subsection-title">Custom Org Types</div></div>
+    <p>Custom org types (Division, Business Unit, Function, Practice) are configured via <strong>Maintain Organization Types</strong>. Each type has its own hierarchy. Workers can be assigned to multiple custom org types simultaneously — creating the matrix view Finance and leadership often need for cross-functional reporting. Configure custom org types by:</p>
+    <ul>
+      <li>Creating the org type definition (Maintain Organization Types)</li>
+      <li>Creating the org instances within each type (Create Organization → select type)</li>
+      <li>Assigning workers or positions to the custom org via Edit Org Assignments or EIB mass load</li>
+      <li>Building reports and dashboards using the custom org as a filter or grouping dimension (Vol. 05)</li>
+    </ul>
+  </div>
+
+  <!-- S7 -->
+  <div class="section" id="s7">
+    <div class="section-header"><div class="section-num">07</div><div><div class="section-title">Restructures, Moves &amp; M&amp;A Scenarios</div><div class="section-desc">High-complexity org changes — planning and execution</div></div></div>
+
+    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Org restructures are the highest-risk org management scenario in Workday. Moving workers or orgs across hierarchy levels, legal entities, or cost centers triggers cascading impacts across payroll, security, BPF, integrations, and reporting simultaneously. Never execute a restructure without a written impact assessment reviewed by HRIS, Finance, Legal, and HR Operations.</div></div>
+
+    <div class="subsection"><div class="subsection-title">Restructure Impact Assessment Framework</div></div>
+    <table class="data-table">
+      <thead><tr><th>Domain</th><th>Questions to Answer</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Security</strong></td><td>Which workers gain/lose access? Which HR Partners need role reassignment? Are there unconstrained groups affected?</td><td>HRIS Admin</td></tr>
+        <tr><td><strong>Payroll</strong></td><td>Are workers moving legal entities or cost centers? Are retroactive payroll adjustments needed? What is the effective date vs. payroll cutoff?</td><td>Payroll + Finance</td></tr>
+        <tr><td><strong>BPF</strong></td><td>Do approval routes change? Do condition rules route to different orgs post-restructure? Are in-flight transactions affected?</td><td>HRIS Admin</td></tr>
+        <tr><td><strong>Integrations</strong></td><td>Do any integrations use org-level filters that will break? Do downstream systems need updated org codes?</td><td>HRIS Admin + IT</td></tr>
+        <tr><td><strong>Reporting</strong></td><td>Will headcount rollup reports show correct data on the effective date? Are historical reports affected?</td><td>HRIS / Analytics</td></tr>
+        <tr><td><strong>Legal / Works Council</strong></td><td>Does the restructure require Works Council notification or consultation? Are there employment law implications (TUPE, collective agreement triggers)?</td><td>Legal + HR</td></tr>
+      </tbody>
+    </table>
+
+    <div class="subsection"><div class="subsection-title">Moving Workers Between Orgs</div></div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Use Transfer / Move Worker (Not Terminate + Rehire)</div>
+        <div class="step-body">For workers moving between supervisory orgs within the same legal entity, use the <strong>Move Workers</strong> task or initiate a <strong>Transfer</strong> business process. Do not terminate and rehire — this breaks service continuity, resets tenure, and creates data integrity issues in benefits and compensation history. Transfer preserves the full worker record and employment history.</div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">For Cross-Entity Moves — Use Global Transfer</div>
+        <div class="step-body">Workers moving between legal entities require a <strong>Global Transfer</strong> (not Transfer). Global Transfer creates a new employment record in the target entity while maintaining the relationship to the prior employment. Configure: new position, new cost center, new compensation if applicable, and new legal entity. Confirm the tax and payroll implications with Finance before initiating.</div>
+        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Global Transfer initiates a new Hire BP in the target entity in addition to the termination BP in the source entity. Both BPs must complete for the transfer to be clean. Monitor both in-flight simultaneously and confirm all approvals clear before the worker's transfer effective date.</div></div>
+      </div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Post-Move Validation</div>
+        <div class="step-body">After executing moves: (1) confirm workers appear in the correct org in Workday, (2) validate manager self-service shows the moved workers under new manager, (3) confirm HR Partner role access is correct for the new org, (4) run a headcount report pre/post to validate counts balance, (5) confirm integrations have picked up the move in the next scheduled run.</div>
+      </div></div>
+    </div>
+
+    <div class="subsection"><div class="subsection-title">M&amp;A Org Integration — Fast Reference</div></div>
+    <table class="data-table">
+      <thead><tr><th>Phase</th><th>Org Action</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Day 1 — Legal close</td><td>Create top-level supervisory org for acquired entity; assign HRIS Admin role; configure legal entity</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Week 1–4</td><td>Build org hierarchy for acquired entity; assign HR Partner roles; configure cost centers and regions</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Month 1–3</td><td>Load acquired workers via EIB inbound (Vol. 01); assign to new orgs; validate security access</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Month 3–12</td><td>Integrate org hierarchy with parent company — move acquired orgs under parent hierarchy as integration progresses</td><td><span class="badge med">Medium</span></td></tr>
+        <tr><td>Post-integration</td><td>Rationalise duplicate org types, cost centers, and custom orgs; deprecate legacy structures</td><td><span class="badge low">Low</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- S8 -->
+  <div class="section" id="s8">
+    <div class="section-header"><div class="section-num">08</div><div><div class="section-title">Org Governance &amp; Audit</div><div class="section-desc">Maintaining org data quality over time</div></div></div>
+
+    <div class="subsection"><div class="subsection-title">Quarterly Org Governance Tasks</div></div>
+    <table class="data-table">
+      <thead><tr><th>Task</th><th>Method</th><th>Frequency</th></tr></thead>
+      <tbody>
+        <tr><td>Empty org audit — orgs with no workers or positions</td><td>Run <strong>Organizations Without Positions</strong> report — inactivate or delete empty orgs</td><td><span class="badge med">Quarterly</span></td></tr>
+        <tr><td>Manager assignment review — orgs with no manager</td><td>Run org report filtered to orgs with no manager assignment — assign or escalate</td><td><span class="badge med">Quarterly</span></td></tr>
+        <tr><td>Role assignment audit — stale HR Partner / Recruiter roles</td><td>Cross-reference role assignments against active worker list — remove terminated workers</td><td><span class="badge high">Monthly</span></td></tr>
+        <tr><td>Org hierarchy depth review — excessive depth</td><td>Report on org hierarchy levels — flag orgs deeper than your design standard</td><td><span class="badge low">Annual</span></td></tr>
+        <tr><td>Cost center alignment review</td><td>Confirm supervisory org → cost center mapping matches Finance's current GL structure</td><td><span class="badge med">Quarterly</span></td></tr>
+        <tr><td>Post-release org object validation</td><td>After each Workday release, confirm org-related delivered reports and BPs function correctly</td><td><span class="badge info">Per Release</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- S9 -->
+  <div class="section" id="s9">
+    <div class="section-header"><div class="section-num">09</div><div><div class="section-title">Validation &amp; Testing</div><div class="section-desc">Confirming org changes work as designed</div></div></div>
+    <ul class="checklist">
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">New org appears in org hierarchy at correct level — confirmed via Workday org chart view</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Manager assignment confirmed — manager's self-service shows workers in the org</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">HR Partner role assignment confirmed — HR Partner can view all workers in the org via View As</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Cost Center and org assignments populate correctly on test Hire transaction</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">BP routing validated — approval routes to correct manager for test transaction in new org</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Headcount report shows moved workers in correct org from effective date</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Integration output reflects org changes on next scheduled run — no orphaned or misrouted records</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">For cross-entity moves: payroll confirms worker appears in correct entity's payroll run</span></li>
+    </ul>
+  </div>
+
+  <!-- S10 -->
+  <div class="section" id="s10">
+    <div class="section-header"><div class="section-num">10</div><div><div class="section-title">Operator Notes</div><div class="section-desc">Org-specific design decisions and configuration record</div></div></div>
+    <div class="notes-area">
+      <p style="color:var(--text-dim);font-size:13px;font-style:italic;margin-bottom:16px;">Complete for each org creation or restructure event.</p>
+      <div class="nrow">
+        <div><div class="nf-label">Org Name</div><input class="nfield" type="text" placeholder="e.g. HR Shared Services — EMEA"/></div>
+        <div><div class="nf-label">Parent Org</div><input class="nfield" type="text" placeholder="e.g. CHRO Office"/></div>
+      </div>
+      <div class="nrow">
+        <div><div class="nf-label">Manager (Worker)</div><input class="nfield" type="text" placeholder="Worker name / Employee ID"/></div>
+        <div><div class="nf-label">Effective Date</div><input class="nfield" type="text" placeholder="DD/MM/YYYY"/></div>
+      </div>
+      <div class="nrow">
+        <div><div class="nf-label">Cost Center Assigned</div><input class="nfield" type="text" placeholder="e.g. CC-HR-EMEA-001"/></div>
+        <div><div class="nf-label">Legal Entity</div><input class="nfield" type="text" placeholder="e.g. Acme Corp UK Ltd"/></div>
+      </div>
+      <div class="nrow">
+        <div><div class="nf-label">HR Partner Role Assigned To</div><input class="nfield" type="text" placeholder="Worker name / scope"/></div>
+        <div><div class="nf-label">Staffing Model</div><input class="nfield" type="text" placeholder="Position Management / Job Management"/></div>
+      </div>
+      <div style="margin-bottom:16px;"><div class="nf-label">Impact Assessment Summary</div><textarea class="ntarea" placeholder="Security: [impact]&#10;Payroll: [impact]&#10;BPF: [impact]&#10;Integrations: [impact]&#10;Reporting: [impact]&#10;Works Council: [notification status]"></textarea></div>
+      <div><div class="nf-label">Design Decisions, Exceptions &amp; Rationale</div><textarea class="ntarea" placeholder="Document org design rationale, restructure business case, legal / Works Council notifications, Finance alignment..."></textarea></div>
+    </div>
+  </div>
+
+  <!-- S11 -->
+  <div class="section" id="s11">
+    <div class="section-header"><div class="section-num">11</div><div><div class="section-title">Change Log</div></div></div>
+    <table class="data-table">
+      <thead><tr><th>Version</th><th>Date</th><th>Changed By</th><th>Change Description</th><th>Impacted Domains</th><th>Approved By</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td>[Date]</td><td>[Name]</td><td>Initial org creation / restructure execution</td><td>[Security / Payroll / BPF]</td><td>[Approver]</td></tr>
+        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- S12 — SERIES SUMMARY -->
+  <div class="section" id="s12">
+    <div class="section-header"><div class="section-num">12</div><div><div class="section-title">Series Summary</div><div class="section-desc">The complete Kaizen OS Workday SOP Series at a glance</div></div></div>
+    <p>You have reached the final volume of the Kaizen OS Workday SOP Series. Each volume is a standalone, sellable asset — and all six form a comprehensive Workday Admin and Consultant reference system.</p>
+
+    <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:20px 0;">
+      <table class="data-table" style="margin:0">
+        <thead><tr><th>#</th><th>Volume Title</th><th>Core Scope</th><th>Complexity</th></tr></thead>
+        <tbody>
+          <tr><td><span style="color:var(--accent);font-weight:700;font-family:var(--mono)">01</span></td><td><strong>Integration Setup (EIB / Studio)</strong></td><td>EIB inbound/outbound, Studio deployment, transport, scheduling</td><td><span class="badge high">Advanced</span></td></tr>
+          <tr><td><span style="color:var(--accent);font-weight:700;font-family:var(--mono)">02</span></td><td><strong>Security Groups &amp; Domain Policies</strong></td><td>Security architecture, group types, domain policy assignment, audit</td><td><span class="badge high">Advanced</span></td></tr>
+          <tr><td><span style="color:var(--accent);font-weight:700;font-family:var(--mono)">03</span></td><td><strong>Business Process Framework</strong></td><td>Step types, condition rules, routing logic, notifications, governance</td><td><span class="badge high">Advanced</span></td></tr>
+          <tr><td><span style="color:var(--accent);font-weight:700;font-family:var(--mono)">04</span></td><td><strong>Compensation Grades &amp; Plans</strong></td><td>Grade structures, plans, eligibility rules, annual review cycles</td><td><span class="badge high">Advanced</span></td></tr>
+          <tr><td><span style="color:var(--accent);font-weight:700;font-family:var(--mono)">05</span></td><td><strong>Custom Reports &amp; Calculated Fields</strong></td><td>Report types, build process, calculated fields, governance, scheduling</td><td><span class="badge med">Intermediate</span></td></tr>
+          <tr><td><span style="color:var(--accent);font-weight:700;font-family:var(--mono)">06</span></td><td><strong>Org Structures &amp; Supervisory Orgs</strong></td><td>Org design, creation, role assignments, restructures, M&amp;A</td><td><span class="badge high">Advanced</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout rat"><div class="callout-label">💡 Kaizen OS Operator Note</div><div class="callout-body">Each volume is designed to stand alone as a sellable asset ($27–$47 individually) or bundle as a complete series ($127–$197). The series collectively covers the configuration domains that generate the most consulting revenue and the most audit exposure for Workday-running organisations — positioning each buyer as a more capable, more confident Workday operator from day one.</div></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">KAIZEN OS</div>
+    <div class="footer-note">Workday SOP Series Vol. 06 — Org Structures &amp; Supervisory Orgs · v1.0 · © 2026 Kaizen OS. All rights reserved.</div>
+  </div>
+
+</div>
+<script>function toggleCheck(el){el.classList.toggle('checked')}</script>
+</body>
+</html>
