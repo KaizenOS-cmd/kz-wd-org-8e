@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Workday Org Structures & Supervisory Orgs SOP — Kaizen OS</title>
+<title>Workday Org Structures & Supervisory Orgs SOP â Kaizen OS</title>
 <style>
   :root {
     --bg:#0e0e0e;--surface:#161616;--surface2:#1e1e1e;--border:#2a2a2a;
@@ -119,14 +119,14 @@
 
   <div class="cover">
     <div class="tags">
-      <div class="series-tag"><span class="series-label">Workday SOP Series · Vol. 06 — Final Volume</span></div>
+      <div class="series-tag"><span class="series-label">Workday SOP Series Â· Vol. 01 â Final Volume</span></div>
       <div class="brand-tag"><div class="brand-dot"></div><span class="brand-name">Kaizen OS</span></div>
     </div>
     <div class="cover-title">Org Structures &amp;<br><span>Supervisory Orgs</span></div>
-    <p class="cover-sub">A practitioner SOP for designing, building, and maintaining Workday organisational structures — covering supervisory org hierarchy design, org creation and editing, role assignments, org type configuration, and M&A / restructure playbooks. The foundation that every other Workday module sits on.</p>
+    <p class="cover-sub">A practitioner SOP for designing, building, and maintaining Workday organisational structures â covering supervisory org hierarchy design, org creation and editing, role assignments, org type configuration, and M&A / restructure playbooks. The foundation that every other Workday module sits on.</p>
     <div class="meta-grid">
       <div class="meta-item"><div class="meta-label">Document Type</div><div class="meta-value">SOP Template</div></div>
-      <div class="meta-item"><div class="meta-label">Series Volume</div><div class="meta-value">06 of 06</div></div>
+      <div class="meta-item"><div class="meta-label">Series Volume</div><div class="meta-value">01 of 06</div></div>
       <div class="meta-item"><div class="meta-label">Audience</div><div class="meta-value">Workday Admins / Consultants</div></div>
       <div class="meta-item"><div class="meta-label">Scope</div><div class="meta-value">Org Architecture</div></div>
       <div class="meta-item"><div class="meta-label">Version</div><div class="meta-value">1.0</div></div>
@@ -156,8 +156,8 @@
   <div class="section" id="s1">
     <div class="section-header"><div class="section-num">01</div><div><div class="section-title">How to Use This SOP</div><div class="section-desc">Read before touching any org structure</div></div></div>
     <p>The supervisory org hierarchy is the structural backbone of Workday. Every security constraint, every business process routing, every report filter, and every role assignment is anchored to this hierarchy. A poorly designed or incorrectly maintained org structure cascades into failures across security, payroll, reporting, and user experience simultaneously.</p>
-    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Moving orgs, reassigning managers, or restructuring the hierarchy affects: (1) role-based security group membership — immediately, (2) business process routing — immediately, (3) reporting rollups — immediately, (4) compensation hierarchy for review cycles. Always model the impact across all four dimensions before executing any org change in production.</div></div>
-    <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Maintain a visual org chart (Visio, Miro, or org chart export from Workday) alongside this SOP. The visual is the first reference point during restructure planning — having it current and accessible reduces planning errors significantly.</div></div>
+    <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Moving orgs, reassigning managers, or restructuring the hierarchy affects: (1) role-based security group membership â immediately, (2) business process routing â immediately, (3) reporting rollups â immediately, (4) compensation hierarchy for review cycles. Always model the impact across all four dimensions before executing any org change in production.</div></div>
+    <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">Maintain a visual org chart (Visio, Miro, or org chart export from Workday) alongside this SOP. The visual is the first reference point during restructure planning â having it current and accessible reduces planning errors significantly.</div></div>
   </div>
 
   <!-- S2 -->
@@ -165,7 +165,7 @@
     <div class="section-header"><div class="section-num">02</div><div><div class="section-title">Org Architecture Primer</div><div class="section-desc">Org types, hierarchy rules, and design principles</div></div></div>
 
     <div class="grid2">
-      <div class="card"><div class="card-title">Supervisory Org</div><p style="font-size:13px;color:var(--text-muted);margin:0">The primary org type. Reflects the management hierarchy — workers belong to supervisory orgs. Security constraints, manager relationships, and BP routing all derive from this structure.</p></div>
+      <div class="card"><div class="card-title">Supervisory Org</div><p style="font-size:13px;color:var(--text-muted);margin:0">The primary org type. Reflects the management hierarchy â workers belong to supervisory orgs. Security constraints, manager relationships, and BP routing all derive from this structure.</p></div>
       <div class="card"><div class="card-title">Company / Legal Entity</div><p style="font-size:13px;color:var(--text-muted);margin:0">A legal-entity org type used for payroll, legal reporting, and financial consolidation. Workers have a primary company assignment. Does not drive security or BP routing.</p></div>
       <div class="card"><div class="card-title">Cost Center</div><p style="font-size:13px;color:var(--text-muted);margin:0">Financial org type. Workers (or positions) are assigned a cost center for financial reporting and budget allocation. Cost center hierarchy is separate from supervisory org hierarchy.</p></div>
       <div class="card"><div class="card-title">Region</div><p style="font-size:13px;color:var(--text-muted);margin:0">Geographic org type. Used for grouping workers by geography for reporting, headcount analysis, and regional HR operations. Drives constrained security for regional HR Leads.</p></div>
@@ -175,30 +175,30 @@
 
     <div class="subsection"><div class="subsection-title">Example Supervisory Org Hierarchy</div></div>
     <div class="org-tree">
-      <div class="org-node root">▸ [Company Name] — Top-Level Org</div>
-      <div class="org-node l1">├─ CHRO Office</div>
-      <div class="org-node l2">├─ HR Shared Services</div>
-      <div class="org-node l3">├─ HRIS &amp; Data Management</div>
-      <div class="org-node l3">└─ HR Operations</div>
-      <div class="org-node l2">└─ Talent Acquisition</div>
-      <div class="org-node l1">├─ Technology</div>
-      <div class="org-node l2">├─ Engineering — Platform</div>
-      <div class="org-node l2">└─ Engineering — Product</div>
-      <div class="org-node l1">├─ Commercial</div>
-      <div class="org-node l2">├─ Sales — North America</div>
-      <div class="org-node l2">└─ Sales — EMEA</div>
-      <div class="org-node l1">└─ Finance</div>
-      <div class="org-node l2">└─ Financial Planning &amp; Analysis</div>
+      <div class="org-node root">â¸ [Company Name] â Top-Level Org</div>
+      <div class="org-node l1">ââ CHRO Office</div>
+      <div class="org-node l2">ââ HR Shared Services</div>
+      <div class="org-node l3">ââ HRIS &amp; Data Management</div>
+      <div class="org-node l3">ââ HR Operations</div>
+      <div class="org-node l2">ââ Talent Acquisition</div>
+      <div class="org-node l1">ââ Technology</div>
+      <div class="org-node l2">ââ Engineering â Platform</div>
+      <div class="org-node l2">ââ Engineering â Product</div>
+      <div class="org-node l1">ââ Commercial</div>
+      <div class="org-node l2">ââ Sales â North America</div>
+      <div class="org-node l2">ââ Sales â EMEA</div>
+      <div class="org-node l1">ââ Finance</div>
+      <div class="org-node l2">ââ Financial Planning &amp; Analysis</div>
     </div>
 
-    <div class="callout rat"><div class="callout-label">💡 Rationale</div><div class="callout-body">The supervisory org hierarchy should reflect the <strong>management reporting line</strong> — not the business or functional structure. Finance, Division, and Business Unit structures should use separate Cost Center or Custom Org hierarchies. Conflating management and financial structure in the supervisory org is the most common org design error in Workday implementations.</div></div>
+    <div class="callout rat"><div class="callout-label">ð¡ Rationale</div><div class="callout-body">The supervisory org hierarchy should reflect the <strong>management reporting line</strong> â not the business or functional structure. Finance, Division, and Business Unit structures should use separate Cost Center or Custom Org hierarchies. Conflating management and financial structure in the supervisory org is the most common org design error in Workday implementations.</div></div>
 
     <div class="subsection"><div class="subsection-title">Org Design Principles</div></div>
     <table class="data-table">
       <thead><tr><th>Principle</th><th>Guidance</th><th>Why It Matters</th></tr></thead>
       <tbody>
         <tr><td><strong>One worker, one supervisory org</strong></td><td>Every worker belongs to exactly one supervisory org. No exceptions.</td><td>Multiple supervisory org assignments break manager chain-of-command in Workday</td></tr>
-        <tr><td><strong>Manager = Org head</strong></td><td>The manager of a supervisory org is the worker at the top of that org — typically the person who manages the team directly.</td><td>Manager assignment drives approval routing, comp review, and self-service access</td></tr>
+        <tr><td><strong>Manager = Org head</strong></td><td>The manager of a supervisory org is the worker at the top of that org â typically the person who manages the team directly.</td><td>Manager assignment drives approval routing, comp review, and self-service access</td></tr>
         <tr><td><strong>Minimum viable hierarchy depth</strong></td><td>Design the shallowest hierarchy that supports your reporting and security needs. Avoid creating orgs for teams of 1 where possible.</td><td>Deep hierarchies increase maintenance burden and can create unintended approval chain lengths</td></tr>
         <tr><td><strong>Top org is sacred</strong></td><td>Never move or rename the top-level org without extensive planning. It anchors every reporting rollup and security inheritance.</td><td>Top-org changes break integrations, reports, and security simultaneously</td></tr>
         <tr><td><strong>Org name = functional intent</strong></td><td>Name orgs for their function/team, not their current manager. Manager names in org names create constant rename maintenance.</td><td>Org names appear in reports, BP notifications, and system communications at scale</td></tr>
@@ -210,14 +210,14 @@
   <div class="section" id="s3">
     <div class="section-header"><div class="section-num">03</div><div><div class="section-title">Pre-Configuration Checklist</div><div class="section-desc">Complete before any org creation or restructure</div></div></div>
     <ul class="checklist">
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Org design document approved — new orgs, parent org, and manager assignments confirmed<small>[ORG-SPECIFIC] Include org name, manager name/ID, parent org, effective date</small></span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Downstream impact assessed across security, BPF, integrations, and reporting<small>Use the Vol. 02, 03, 01, and 05 SOPs to evaluate impact in each domain before proceeding</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Org design document approved â new orgs, parent org, and manager assignments confirmed<small>[ORG-SPECIFIC] Include org name, manager name/ID, parent org, effective date</small></span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Downstream impact assessed across security, BPF, integrations, and reporting<small>Use the Vol. 03, 03, 01, and 05 SOPs to evaluate impact in each domain before proceeding</small></span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">HR Partner and Manager role assignments confirmed for the new or restructured org</span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Cost Center and other org type assignments confirmed with Finance</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Legal entity assignment confirmed — especially critical for cross-border moves</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Legal entity assignment confirmed â especially critical for cross-border moves</span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Works Council / co-determination notification completed if restructure affects employee works council scope<small>[ORG-SPECIFIC] Required in many EU jurisdictions before executing restructures affecting represented workers</small></span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Communication plan confirmed — impacted workers and managers notified of org changes per HR policy</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Effective date confirmed — aligns with payroll cutoff, comp review cycles, and legal requirements</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Communication plan confirmed â impacted workers and managers notified of org changes per HR policy</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Effective date confirmed â aligns with payroll cutoff, comp review cycles, and legal requirements</span></li>
     </ul>
   </div>
 
@@ -228,31 +228,31 @@
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Create the Supervisory Organisation</div>
-        <div class="step-body">Search <strong>Create Supervisory Organization</strong>. Enter the org name per your naming convention. Set the <strong>Availability Date</strong> — the earliest date the org can have workers assigned. Set the <strong>Staffing Model</strong>: Position Management (positions exist independently of workers) or Job Management (positions created with workers). Confirm with your HRIS lead which model your tenant uses — do not mix models.</div>
-        <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Staffing Model selection at org creation is <strong>permanent</strong> — it cannot be changed after workers or positions are assigned to the org. Defaulting to the wrong model requires a full org deletion and rebuild. Confirm the tenant's staffing model before creating any org.</div></div>
+        <div class="step-body">Search <strong>Create Supervisory Organization</strong>. Enter the org name per your naming convention. Set the <strong>Availability Date</strong> â the earliest date the org can have workers assigned. Set the <strong>Staffing Model</strong>: Position Management (positions exist independently of workers) or Job Management (positions created with workers). Confirm with your HRIS lead which model your tenant uses â do not mix models.</div>
+        <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Staffing Model selection at org creation is <strong>permanent</strong> â it cannot be changed after workers or positions are assigned to the org. Defaulting to the wrong model requires a full org deletion and rebuild. Confirm the tenant's staffing model before creating any org.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">2</div><div class="step-content">
         <div class="step-title">Assign the Manager</div>
-        <div class="step-body">Within the org setup, assign the <strong>Manager</strong> — the worker who leads this team. The manager assignment drives: (1) self-service access to team members, (2) approval routing in BPs, (3) Manager security group membership, (4) compensation review org grouping. Confirm the manager's worker record exists and is active before assigning.</div>
-        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">If the new manager is being hired simultaneously with the org creation (common in M&A), create the manager's worker record first — even as a placeholder — before creating the org. Org creation requires an existing Workday worker as manager. You cannot assign a manager who does not yet exist in the system.</div></div>
+        <div class="step-body">Within the org setup, assign the <strong>Manager</strong> â the worker who leads this team. The manager assignment drives: (1) self-service access to team members, (2) approval routing in BPs, (3) Manager security group membership, (4) compensation review org grouping. Confirm the manager's worker record exists and is active before assigning.</div>
+        <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">If the new manager is being hired simultaneously with the org creation (common in M&A), create the manager's worker record first â even as a placeholder â before creating the org. Org creation requires an existing Workday worker as manager. You cannot assign a manager who does not yet exist in the system.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">3</div><div class="step-content">
         <div class="step-title">Set the Parent Org</div>
-        <div class="step-body">Assign the <strong>Superior Organization</strong> — the org one level up in the hierarchy. This determines the inheritance chain for security, BP routing, and reporting rollups. Navigate the org tree to select the correct parent. Confirm the parent org exists and is correctly positioned in the hierarchy before saving.</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Setting the wrong parent org is one of the most impactful single-field errors in Workday. It immediately misroutes security access, approvals, and reporting. Double-check the parent org by viewing the org hierarchy before and after setting the parent.</div></div>
+        <div class="step-body">Assign the <strong>Superior Organization</strong> â the org one level up in the hierarchy. This determines the inheritance chain for security, BP routing, and reporting rollups. Navigate the org tree to select the correct parent. Confirm the parent org exists and is correctly positioned in the hierarchy before saving.</div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">Setting the wrong parent org is one of the most impactful single-field errors in Workday. It immediately misroutes security access, approvals, and reporting. Double-check the parent org by viewing the org hierarchy before and after setting the parent.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">4</div><div class="step-content">
         <div class="step-title">Configure Org Assignments (Cost Center, Region, Custom Orgs)</div>
-        <div class="step-body">After creating the supervisory org, navigate to <strong>Edit Organization Assignments</strong>. Assign: Cost Center, Company / Legal Entity, Region, and any Custom Org types (Business Unit, Division, Function). These assignments populate automatically on worker records when they are placed in this org — simplifying data entry and ensuring consistency.</div>
-        <div class="callout note"><div class="callout-label">📋 Note</div><div class="callout-body">Cost Center and Company assignment on the supervisory org sets the default for workers in that org. Individual workers can be assigned a different Cost Center at the position level if needed. Confirm with Finance whether Cost Center assignment should be at the org or position level for your tenant's financial reporting model.</div></div>
+        <div class="step-body">After creating the supervisory org, navigate to <strong>Edit Organization Assignments</strong>. Assign: Cost Center, Company / Legal Entity, Region, and any Custom Org types (Business Unit, Division, Function). These assignments populate automatically on worker records when they are placed in this org â simplifying data entry and ensuring consistency.</div>
+        <div class="callout note"><div class="callout-label">ð Note</div><div class="callout-body">Cost Center and Company assignment on the supervisory org sets the default for workers in that org. Individual workers can be assigned a different Cost Center at the position level if needed. Confirm with Finance whether Cost Center assignment should be at the org or position level for your tenant's financial reporting model.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">5</div><div class="step-content">
         <div class="step-title">Assign Locations</div>
-        <div class="step-body">Navigate to the org → <strong>Locations</strong>. Add the physical location(s) where this org's workers are based. Location assignment at the org level sets the default for new positions. For orgs spanning multiple locations (common in global teams), add all relevant locations and confirm with HR Partners that workers are being assigned the correct individual location during Hire transactions.</div>
+        <div class="step-body">Navigate to the org â <strong>Locations</strong>. Add the physical location(s) where this org's workers are based. Location assignment at the org level sets the default for new positions. For orgs spanning multiple locations (common in global teams), add all relevant locations and confirm with HR Partners that workers are being assigned the correct individual location during Hire transactions.</div>
       </div></div>
     </div>
   </div>
@@ -260,25 +260,25 @@
   <!-- S5 -->
   <div class="section" id="s5">
     <div class="section-header"><div class="section-num">05</div><div><div class="section-title">Role Assignments on Orgs</div><div class="section-desc">Assigning HR Partners, Recruiters, and other roles to supervisory orgs</div></div></div>
-    <p>Role assignments connect workers to role-based security groups (see Vol. 02) by assigning them a named role on a supervisory org. A worker assigned the HR Partner role on an org gains the security access and BP permissions of the HR Partner security group — constrained to workers within that org hierarchy.</p>
+    <p>Role assignments connect workers to role-based security groups (see Vol. 03) by assigning them a named role on a supervisory org. A worker assigned the HR Partner role on an org gains the security access and BP permissions of the HR Partner security group â constrained to workers within that org hierarchy.</p>
 
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Assign a Role to the Org</div>
-        <div class="step-body">Navigate to the supervisory org → <strong>Assign Roles</strong>. Select the role (e.g., HR Partner, Recruiter, Benefits Partner). Search for the worker to assign. Set the <strong>scope</strong> — does this role assignment cover just this org, or this org and all subordinate orgs? For HR Partners, typically select "include subordinate organisations" to cover the full reporting hierarchy.</div>
-        <div class="callout tip"><div class="callout-label">✅ Tip</div><div class="callout-body">Assign HR Partner roles at the highest org level the HR Partner supports — the subordinate org inclusion means they automatically get access to all child orgs without individual assignments. Avoid assigning the same HR Partner to 50 individual orgs when one top-level assignment with subordinate inclusion achieves the same result with far less maintenance.</div></div>
+        <div class="step-body">Navigate to the supervisory org â <strong>Assign Roles</strong>. Select the role (e.g., HR Partner, Recruiter, Benefits Partner). Search for the worker to assign. Set the <strong>scope</strong> â does this role assignment cover just this org, or this org and all subordinate orgs? For HR Partners, typically select "include subordinate organisations" to cover the full reporting hierarchy.</div>
+        <div class="callout tip"><div class="callout-label">â Tip</div><div class="callout-body">Assign HR Partner roles at the highest org level the HR Partner supports â the subordinate org inclusion means they automatically get access to all child orgs without individual assignments. Avoid assigning the same HR Partner to 50 individual orgs when one top-level assignment with subordinate inclusion achieves the same result with far less maintenance.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">2</div><div class="step-content">
         <div class="step-title">Validate Role Assignment Takes Effect</div>
-        <div class="step-body">After assigning the role, confirm the assignment is active: navigate to the assigned worker's profile → <strong>Security Roles</strong> tab. Confirm the role appears with the correct org scope. Then use <strong>View As</strong> (Vol. 02, Section 06) to validate the worker now has the expected security access for workers within that org hierarchy.</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Role assignments on orgs are immediate — the worker gains security access as soon as the assignment is saved. If you are pre-configuring for a future restructure, time role assignments carefully. A worker should not gain access to an org's workers before the restructure is communicated and effective.</div></div>
+        <div class="step-body">After assigning the role, confirm the assignment is active: navigate to the assigned worker's profile â <strong>Security Roles</strong> tab. Confirm the role appears with the correct org scope. Then use <strong>View As</strong> (Vol. 03, Section 06) to validate the worker now has the expected security access for workers within that org hierarchy.</div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">Role assignments on orgs are immediate â the worker gains security access as soon as the assignment is saved. If you are pre-configuring for a future restructure, time role assignments carefully. A worker should not gain access to an org's workers before the restructure is communicated and effective.</div></div>
       </div></div>
 
       <div class="step"><div class="step-num">3</div><div class="step-content">
         <div class="step-title">Remove Role Assignments When No Longer Needed</div>
-        <div class="step-body">When an HR Partner leaves, transfers, or the org restructures, remove role assignments immediately. Navigate to the org → <strong>Assign Roles</strong> → remove the worker from the role. This immediately revokes the security access associated with the role — no additional security steps required.</div>
-        <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Stale role assignments — HR Partners or Recruiters who have left or transferred but still hold roles on orgs — are a top-5 Workday security audit finding. Include role assignment review in your offboarding checklist (Hire to Retire BP To-Do) for all workers in HR and Talent Acquisition roles.</div></div>
+        <div class="step-body">When an HR Partner leaves, transfers, or the org restructures, remove role assignments immediately. Navigate to the org â <strong>Assign Roles</strong> â remove the worker from the role. This immediately revokes the security access associated with the role â no additional security steps required.</div>
+        <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Stale role assignments â HR Partners or Recruiters who have left or transferred but still hold roles on orgs â are a top-5 Workday security audit finding. Include role assignment review in your offboarding checklist (Hire to Retire BP To-Do) for all workers in HR and Talent Acquisition roles.</div></div>
       </div></div>
     </div>
   </div>
@@ -291,30 +291,30 @@
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Create Cost Center</div>
-        <div class="step-body">Search <strong>Create Cost Center</strong>. Enter the cost center ID (must match your Finance system's GL code exactly — any mismatch breaks financial reporting integrations). Enter the name and assign the Cost Center Hierarchy parent. Assign a Cost Center Manager — typically the budget owner for that cost center.</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Cost Center IDs feed financial system integrations. A typo in the Cost Center ID on creation can result in payroll charges being attributed to the wrong GL code in your ERP. Validate the ID against your Finance system's chart of accounts before saving.</div></div>
+        <div class="step-body">Search <strong>Create Cost Center</strong>. Enter the cost center ID (must match your Finance system's GL code exactly â any mismatch breaks financial reporting integrations). Enter the name and assign the Cost Center Hierarchy parent. Assign a Cost Center Manager â typically the budget owner for that cost center.</div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">Cost Center IDs feed financial system integrations. A typo in the Cost Center ID on creation can result in payroll charges being attributed to the wrong GL code in your ERP. Validate the ID against your Finance system's chart of accounts before saving.</div></div>
       </div></div>
       <div class="step"><div class="step-num">2</div><div class="step-content">
         <div class="step-title">Assign Cost Center to Supervisory Org</div>
-        <div class="step-body">Navigate to the supervisory org → <strong>Edit Organization Assignments</strong> → Cost Center field. Select the new cost center. This populates as the default for all workers placed in this org going forward. Existing workers retain their current cost center until individually updated or mass updated via EIB (see Vol. 01).</div>
+        <div class="step-body">Navigate to the supervisory org â <strong>Edit Organization Assignments</strong> â Cost Center field. Select the new cost center. This populates as the default for all workers placed in this org going forward. Existing workers retain their current cost center until individually updated or mass updated via EIB (see Vol. 05).</div>
       </div></div>
     </div>
 
     <div class="subsection"><div class="subsection-title">Custom Org Types</div></div>
-    <p>Custom org types (Division, Business Unit, Function, Practice) are configured via <strong>Maintain Organization Types</strong>. Each type has its own hierarchy. Workers can be assigned to multiple custom org types simultaneously — creating the matrix view Finance and leadership often need for cross-functional reporting. Configure custom org types by:</p>
+    <p>Custom org types (Division, Business Unit, Function, Practice) are configured via <strong>Maintain Organization Types</strong>. Each type has its own hierarchy. Workers can be assigned to multiple custom org types simultaneously â creating the matrix view Finance and leadership often need for cross-functional reporting. Configure custom org types by:</p>
     <ul>
       <li>Creating the org type definition (Maintain Organization Types)</li>
-      <li>Creating the org instances within each type (Create Organization → select type)</li>
+      <li>Creating the org instances within each type (Create Organization â select type)</li>
       <li>Assigning workers or positions to the custom org via Edit Org Assignments or EIB mass load</li>
-      <li>Building reports and dashboards using the custom org as a filter or grouping dimension (Vol. 05)</li>
+      <li>Building reports and dashboards using the custom org as a filter or grouping dimension (Vol. 04)</li>
     </ul>
   </div>
 
   <!-- S7 -->
   <div class="section" id="s7">
-    <div class="section-header"><div class="section-num">07</div><div><div class="section-title">Restructures, Moves &amp; M&amp;A Scenarios</div><div class="section-desc">High-complexity org changes — planning and execution</div></div></div>
+    <div class="section-header"><div class="section-num">07</div><div><div class="section-title">Restructures, Moves &amp; M&amp;A Scenarios</div><div class="section-desc">High-complexity org changes â planning and execution</div></div></div>
 
-    <div class="callout crit"><div class="callout-label">🔴 Critical</div><div class="callout-body">Org restructures are the highest-risk org management scenario in Workday. Moving workers or orgs across hierarchy levels, legal entities, or cost centers triggers cascading impacts across payroll, security, BPF, integrations, and reporting simultaneously. Never execute a restructure without a written impact assessment reviewed by HRIS, Finance, Legal, and HR Operations.</div></div>
+    <div class="callout crit"><div class="callout-label">ð´ Critical</div><div class="callout-body">Org restructures are the highest-risk org management scenario in Workday. Moving workers or orgs across hierarchy levels, legal entities, or cost centers triggers cascading impacts across payroll, security, BPF, integrations, and reporting simultaneously. Never execute a restructure without a written impact assessment reviewed by HRIS, Finance, Legal, and HR Operations.</div></div>
 
     <div class="subsection"><div class="subsection-title">Restructure Impact Assessment Framework</div></div>
     <table class="data-table">
@@ -333,12 +333,12 @@
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-content">
         <div class="step-title">Use Transfer / Move Worker (Not Terminate + Rehire)</div>
-        <div class="step-body">For workers moving between supervisory orgs within the same legal entity, use the <strong>Move Workers</strong> task or initiate a <strong>Transfer</strong> business process. Do not terminate and rehire — this breaks service continuity, resets tenure, and creates data integrity issues in benefits and compensation history. Transfer preserves the full worker record and employment history.</div>
+        <div class="step-body">For workers moving between supervisory orgs within the same legal entity, use the <strong>Move Workers</strong> task or initiate a <strong>Transfer</strong> business process. Do not terminate and rehire â this breaks service continuity, resets tenure, and creates data integrity issues in benefits and compensation history. Transfer preserves the full worker record and employment history.</div>
       </div></div>
       <div class="step"><div class="step-num">2</div><div class="step-content">
-        <div class="step-title">For Cross-Entity Moves — Use Global Transfer</div>
+        <div class="step-title">For Cross-Entity Moves â Use Global Transfer</div>
         <div class="step-body">Workers moving between legal entities require a <strong>Global Transfer</strong> (not Transfer). Global Transfer creates a new employment record in the target entity while maintaining the relationship to the prior employment. Configure: new position, new cost center, new compensation if applicable, and new legal entity. Confirm the tax and payroll implications with Finance before initiating.</div>
-        <div class="callout warn"><div class="callout-label">⚠️ Warning</div><div class="callout-body">Global Transfer initiates a new Hire BP in the target entity in addition to the termination BP in the source entity. Both BPs must complete for the transfer to be clean. Monitor both in-flight simultaneously and confirm all approvals clear before the worker's transfer effective date.</div></div>
+        <div class="callout warn"><div class="callout-label">â ï¸ Warning</div><div class="callout-body">Global Transfer initiates a new Hire BP in the target entity in addition to the termination BP in the source entity. Both BPs must complete for the transfer to be clean. Monitor both in-flight simultaneously and confirm all approvals clear before the worker's transfer effective date.</div></div>
       </div></div>
       <div class="step"><div class="step-num">3</div><div class="step-content">
         <div class="step-title">Post-Move Validation</div>
@@ -346,14 +346,14 @@
       </div></div>
     </div>
 
-    <div class="subsection"><div class="subsection-title">M&amp;A Org Integration — Fast Reference</div></div>
+    <div class="subsection"><div class="subsection-title">M&amp;A Org Integration â Fast Reference</div></div>
     <table class="data-table">
       <thead><tr><th>Phase</th><th>Org Action</th><th>Priority</th></tr></thead>
       <tbody>
-        <tr><td>Day 1 — Legal close</td><td>Create top-level supervisory org for acquired entity; assign HRIS Admin role; configure legal entity</td><td><span class="badge crit">Critical</span></td></tr>
-        <tr><td>Week 1–4</td><td>Build org hierarchy for acquired entity; assign HR Partner roles; configure cost centers and regions</td><td><span class="badge high">High</span></td></tr>
-        <tr><td>Month 1–3</td><td>Load acquired workers via EIB inbound (Vol. 01); assign to new orgs; validate security access</td><td><span class="badge high">High</span></td></tr>
-        <tr><td>Month 3–12</td><td>Integrate org hierarchy with parent company — move acquired orgs under parent hierarchy as integration progresses</td><td><span class="badge med">Medium</span></td></tr>
+        <tr><td>Day 1 â Legal close</td><td>Create top-level supervisory org for acquired entity; assign HRIS Admin role; configure legal entity</td><td><span class="badge crit">Critical</span></td></tr>
+        <tr><td>Week 1â4</td><td>Build org hierarchy for acquired entity; assign HR Partner roles; configure cost centers and regions</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Month 1â3</td><td>Load acquired workers via EIB inbound (Vol. 05); assign to new orgs; validate security access</td><td><span class="badge high">High</span></td></tr>
+        <tr><td>Month 3â12</td><td>Integrate org hierarchy with parent company â move acquired orgs under parent hierarchy as integration progresses</td><td><span class="badge med">Medium</span></td></tr>
         <tr><td>Post-integration</td><td>Rationalise duplicate org types, cost centers, and custom orgs; deprecate legacy structures</td><td><span class="badge low">Low</span></td></tr>
       </tbody>
     </table>
@@ -367,11 +367,11 @@
     <table class="data-table">
       <thead><tr><th>Task</th><th>Method</th><th>Frequency</th></tr></thead>
       <tbody>
-        <tr><td>Empty org audit — orgs with no workers or positions</td><td>Run <strong>Organizations Without Positions</strong> report — inactivate or delete empty orgs</td><td><span class="badge med">Quarterly</span></td></tr>
-        <tr><td>Manager assignment review — orgs with no manager</td><td>Run org report filtered to orgs with no manager assignment — assign or escalate</td><td><span class="badge med">Quarterly</span></td></tr>
-        <tr><td>Role assignment audit — stale HR Partner / Recruiter roles</td><td>Cross-reference role assignments against active worker list — remove terminated workers</td><td><span class="badge high">Monthly</span></td></tr>
-        <tr><td>Org hierarchy depth review — excessive depth</td><td>Report on org hierarchy levels — flag orgs deeper than your design standard</td><td><span class="badge low">Annual</span></td></tr>
-        <tr><td>Cost center alignment review</td><td>Confirm supervisory org → cost center mapping matches Finance's current GL structure</td><td><span class="badge med">Quarterly</span></td></tr>
+        <tr><td>Empty org audit â orgs with no workers or positions</td><td>Run <strong>Organizations Without Positions</strong> report â inactivate or delete empty orgs</td><td><span class="badge med">Quarterly</span></td></tr>
+        <tr><td>Manager assignment review â orgs with no manager</td><td>Run org report filtered to orgs with no manager assignment â assign or escalate</td><td><span class="badge med">Quarterly</span></td></tr>
+        <tr><td>Role assignment audit â stale HR Partner / Recruiter roles</td><td>Cross-reference role assignments against active worker list â remove terminated workers</td><td><span class="badge high">Monthly</span></td></tr>
+        <tr><td>Org hierarchy depth review â excessive depth</td><td>Report on org hierarchy levels â flag orgs deeper than your design standard</td><td><span class="badge low">Annual</span></td></tr>
+        <tr><td>Cost center alignment review</td><td>Confirm supervisory org â cost center mapping matches Finance's current GL structure</td><td><span class="badge med">Quarterly</span></td></tr>
         <tr><td>Post-release org object validation</td><td>After each Workday release, confirm org-related delivered reports and BPs function correctly</td><td><span class="badge info">Per Release</span></td></tr>
       </tbody>
     </table>
@@ -381,13 +381,13 @@
   <div class="section" id="s9">
     <div class="section-header"><div class="section-num">09</div><div><div class="section-title">Validation &amp; Testing</div><div class="section-desc">Confirming org changes work as designed</div></div></div>
     <ul class="checklist">
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">New org appears in org hierarchy at correct level — confirmed via Workday org chart view</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Manager assignment confirmed — manager's self-service shows workers in the org</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">HR Partner role assignment confirmed — HR Partner can view all workers in the org via View As</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">New org appears in org hierarchy at correct level â confirmed via Workday org chart view</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Manager assignment confirmed â manager's self-service shows workers in the org</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">HR Partner role assignment confirmed â HR Partner can view all workers in the org via View As</span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Cost Center and org assignments populate correctly on test Hire transaction</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">BP routing validated — approval routes to correct manager for test transaction in new org</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">BP routing validated â approval routes to correct manager for test transaction in new org</span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Headcount report shows moved workers in correct org from effective date</span></li>
-      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Integration output reflects org changes on next scheduled run — no orphaned or misrouted records</span></li>
+      <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">Integration output reflects org changes on next scheduled run â no orphaned or misrouted records</span></li>
       <li><span class="check-box" onclick="toggleCheck(this)"></span><span class="check-label">For cross-entity moves: payroll confirms worker appears in correct entity's payroll run</span></li>
     </ul>
   </div>
@@ -398,7 +398,7 @@
     <div class="notes-area">
       <p style="color:var(--text-dim);font-size:13px;font-style:italic;margin-bottom:16px;">Complete for each org creation or restructure event.</p>
       <div class="nrow">
-        <div><div class="nf-label">Org Name</div><input class="nfield" type="text" placeholder="e.g. HR Shared Services — EMEA"/></div>
+        <div><div class="nf-label">Org Name</div><input class="nfield" type="text" placeholder="e.g. HR Shared Services â EMEA"/></div>
         <div><div class="nf-label">Parent Org</div><input class="nfield" type="text" placeholder="e.g. CHRO Office"/></div>
       </div>
       <div class="nrow">
@@ -425,17 +425,17 @@
       <thead><tr><th>Version</th><th>Date</th><th>Changed By</th><th>Change Description</th><th>Impacted Domains</th><th>Approved By</th></tr></thead>
       <tbody>
         <tr><td>1.0</td><td>[Date]</td><td>[Name]</td><td>Initial org creation / restructure execution</td><td>[Security / Payroll / BPF]</td><td>[Approver]</td></tr>
-        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>—</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>â</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>â</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>â</td><td></td><td></td><td></td><td></td><td></td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- S12 — SERIES SUMMARY -->
+  <!-- S12 â SERIES SUMMARY -->
   <div class="section" id="s12">
     <div class="section-header"><div class="section-num">12</div><div><div class="section-title">Series Summary</div><div class="section-desc">The complete Kaizen OS Workday SOP Series at a glance</div></div></div>
-    <p>You have reached the final volume of the Kaizen OS Workday SOP Series. Each volume is a standalone, sellable asset — and all six form a comprehensive Workday Admin and Consultant reference system.</p>
+    <p>Welcome to the first volume of the Kaizen OS Workday SOP Series. Each volume is a standalone, sellable asset â and all six form a comprehensive Workday Admin and Consultant reference system.</p>
 
     <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:20px 0;">
       <table class="data-table" style="margin:0">
@@ -451,12 +451,12 @@
       </table>
     </div>
 
-    <div class="callout rat"><div class="callout-label">💡 Kaizen OS Operator Note</div><div class="callout-body">Each volume is designed to stand alone as a sellable asset ($27–$47 individually) or bundle as a complete series ($127–$197). The series collectively covers the configuration domains that generate the most consulting revenue and the most audit exposure for Workday-running organisations — positioning each buyer as a more capable, more confident Workday operator from day one.</div></div>
+    <div class="callout rat"><div class="callout-label">ð¡ Kaizen OS Operator Note</div><div class="callout-body">Each volume is designed to stand alone as a sellable asset ($27â$47 individually) or bundle as a complete series ($127â$197). The series collectively covers the configuration domains that generate the most consulting revenue and the most audit exposure for Workday-running organisations â positioning each buyer as a more capable, more confident Workday operator from day one.</div></div>
   </div>
 
   <div class="footer">
     <div class="footer-brand">KAIZEN OS</div>
-    <div class="footer-note">Workday SOP Series Vol. 06 — Org Structures &amp; Supervisory Orgs · v1.0 · © 2026 Kaizen OS. All rights reserved.</div>
+    <div class="footer-note">Workday SOP Series Vol. 01 â Org Structures &amp; Supervisory Orgs Â· v1.0 Â· Â© 2026 Kaizen OS. All rights reserved.</div>
   </div>
 
 </div>
